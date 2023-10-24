@@ -30,9 +30,15 @@ console.log(boundary(200));
 
 let reverseString = function(stringToReverse) {
    let stringSplitArr = stringToReverse.split("");
-   let reversedArr = stringSplitArr.reverse();
-   let reversedString = reversedArr.join("");
-   return reversedString;
+//    let reversedArr = stringSplitArr.reverse();
+//    let reversedString = reversedArr.join("");
+//    return reversedString;
+    let reversedArr = []
+   for (let i = stringSplitArr.length; i >= 0; i--) {
+    reversedArr.push(stringSplitArr[i])
+    }
+    let reversedString = reversedArr.join("")
+    return reversedString;
 }
 
 console.log(reverseString("ciao"));
@@ -99,11 +105,22 @@ let codify = function(string3) {
     return codedString;
 }
 
+/* let codify = function (stringa) {
+    if (stringa.startsWith("code")) {
+        return stringa;
+    } else {
+        return "code" + stringa;
+    }
+} */
+
 console.log(codify("these nuts"));
 
 // extra 4
 
 let check3and7 = function(numInt2) {
+    if (numInt2 < 0) {
+        return false;
+    }
     if (numInt2 % 3 === 0) {
         return true;
     } else if (numInt2 % 7 === 0) {
@@ -113,7 +130,7 @@ let check3and7 = function(numInt2) {
     }
 }
 
-console.log(check3and7(45));
+console.log(check3and7(-45));
 
 // extra 5
 
